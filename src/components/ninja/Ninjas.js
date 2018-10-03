@@ -1,5 +1,4 @@
 import React from 'react';
-import './Ninjas.css';
 
 const Ninjas = (props) => {
     const { ninjas, deleteNinja } = props;

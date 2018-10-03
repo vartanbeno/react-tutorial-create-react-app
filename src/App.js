@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Ninjas from './Ninjas';
-import AddNinja from './AddNinja';
-import Todos from './Todos';
-import AddTodo from './AddTodo';
+import Ninjas from './components/ninja/Ninjas';
+import AddNinja from './components/ninja/AddNinja';
+import Todos from './components/todo/Todos';
+import AddTodo from './components/todo/AddTodo';
+import Navbar from './components/Navbar';
 
 class App extends Component {
 
@@ -61,17 +62,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className="content">
-        <h1 className="title is-1">My first React app!</h1>
-        <p className="subtitle is-5">Welcome</p>
-        <Ninjas ninjas={ this.state.ninjas } deleteNinja={ this.deleteNinja } />
-        <AddNinja addNinja={ this.addNinja } />
+      <div className="container">
+        <Navbar />
+        <div className="content">
+          <h1 className="title is-1">My first React app!</h1>
+          <p className="subtitle is-5">Welcome</p>
+          <Ninjas ninjas={ this.state.ninjas } deleteNinja={ this.deleteNinja } />
+          <AddNinja addNinja={ this.addNinja } />
 
-        <hr/>
+          <hr/>
 
-        <h1 className="title is-1">Todo list</h1>
-        <Todos todos={ this.state.todos } deleteTodo={ this.deleteTodo } />
-        <AddTodo addTodo={ this.addTodo } />
+          <h1 className="title is-1">Todo list</h1>
+          <Todos todos={ this.state.todos } deleteTodo={ this.deleteTodo } />
+          <AddTodo addTodo={ this.addTodo } />
+        </div>
       </div>
     );
   }
