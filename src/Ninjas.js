@@ -10,7 +10,7 @@ const Ninjas = (props) => {
                 <div>Name: { ninja.name }</div>
                 <div>Age: { ninja.age }</div>
                 <div>Belt: { ninja.belt }</div>
-                <button onClick={ () => { deleteNinja(ninja.id) } }>Delete Ninja</button>
+                <button className="button is-info" onClick={ () => { deleteNinja(ninja.id) } }>Delete Ninja</button>
             </div>
         ) : null;
     })

@@ -32,7 +32,7 @@ class AddNinja extends Component {
                     <label htmlFor="belt">Belt:</label>
                     <input type="text" id="belt" onChange={ this.handleChange } required />
 
-                    <input type="submit"/>
+                    <button className="button is-success" type="submit">Add</button>
                 </form>
             </div>
         )
