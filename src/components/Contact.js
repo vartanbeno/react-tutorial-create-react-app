@@ -1,6 +1,14 @@
 import React from 'react';
 
-const Home = () => {
+const Contact = (props) => {
+
+    /**
+     * Redirect to /about after 2 seconds
+     */
+    // setTimeout(() => {
+    //     props.history.push('/about');
+    // }, 2000);
+
     return (
         <div className="container">
             <h4 className="title is-1">Contact</h4>
@@ -9,4 +17,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default Contact;

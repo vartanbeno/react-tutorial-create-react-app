@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, withRouter } from 'react-router-dom';
 
 // NavLink can be used to add 'active' class to element when on that route
-const Navbar = () => {
+const Navbar = (props) => {
+    console.log(props);
     return (
         <nav className="navbar is-transparent">
             <div className="navbar-menu">
@@ -28,4 +29,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+export default withRouter(Navbar);
