@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class AddNinja extends Component {
 
     state = {
-        name: null,
-        age: null,
-        belt: null
+        name: '',
+        age: '',
+        belt: ''
     }
 
     handleChange = (e) => {
@@ -17,6 +17,11 @@ class AddNinja extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.addNinja(this.state);
+        this.setState({
+            name: '',
+            age: '',
+            belt: ''
+        })
     }
 
     render() {
@@ -24,13 +29,13 @@ class AddNinja extends Component {
             <div>
                 <form onSubmit={ this.handleSubmit } autoComplete="off">
                     <label htmlFor="name">Name:</label>
-                    <input type="text" id="name" onChange={ this.handleChange } required />
+                    <input type="text" id="name" onChange={ this.handleChange } value={ this.state.name } required />
 
                     <label htmlFor="age">Age:</label>
-                    <input type="number" id="age" onChange={ this.handleChange } required />
+                    <input type="number" id="age" onChange={ this.handleChange } value={ this.state.age } required />
 
                     <label htmlFor="belt">Belt:</label>
-                    <input type="text" id="belt" onChange={ this.handleChange } required />
+                    <input type="text" id="belt" onChange={ this.handleChange } value={ this.state.belt } required />
 
                     <button className="button is-success" type="submit">Add</button>
                 </form>

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class AddTodo extends Component {
 
     state = {
-        content: null
+        content: ''
     }
 
     handleChange = (e) => {
@@ -15,6 +15,9 @@ class AddTodo extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.addTodo(this.state);
+        this.setState({
+            content: ''
+        })
     }
 
     render() {
@@ -22,7 +25,7 @@ class AddTodo extends Component {
             <div className="control">
                 <form onSubmit={ this.handleSubmit } autoComplete="off">
                     <div className="field">
-                        <input className="input" type="text" placeholder="Enter todo" onChange={ this.handleChange } required />
+                        <input className="input" type="text" placeholder="Enter todo" onChange={ this.handleChange } value={ this.state.content } required />
                     </div>
                     <button className="button is-link" type="submit">Add</button>
                 </form>
