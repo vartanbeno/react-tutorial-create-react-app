@@ -20,9 +20,9 @@ class AddTodo extends Component {
     render() {
         return (
             <div className="control">
-                <form onSubmit={ this.handleSubmit }>
+                <form onSubmit={ this.handleSubmit } autoComplete="off">
                     <div className="field">
-                        <input className="input" type="text" placeholder="Enter todo" onChange={ this.handleChange } />
+                        <input className="input" type="text" placeholder="Enter todo" onChange={ this.handleChange } required />
                     </div>
                     <button className="button is-link" type="submit">Add</button>
                 </form>
