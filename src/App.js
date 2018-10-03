@@ -4,6 +4,10 @@ import AddNinja from './components/ninja/AddNinja';
 import Todos from './components/todo/Todos';
 import AddTodo from './components/todo/AddTodo';
 import Navbar from './components/Navbar';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
 
 class App extends Component {
 
@@ -62,21 +66,26 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <Navbar />
-        <div className="content">
-          <h1 className="title is-1">My first React app!</h1>
-          <p className="subtitle is-5">Welcome</p>
-          <Ninjas ninjas={ this.state.ninjas } deleteNinja={ this.deleteNinja } />
-          <AddNinja addNinja={ this.addNinja } />
+      <BrowserRouter>
+        <div className="container">
+          <Navbar />
+          <div className="content">
+            {/* <h1 className="title is-1">My first React app!</h1>
+            <p className="subtitle is-5">Welcome</p>
+            <Ninjas ninjas={ this.state.ninjas } deleteNinja={ this.deleteNinja } />
+            <AddNinja addNinja={ this.addNinja } />
 
-          <hr/>
+            <hr/>
 
-          <h1 className="title is-1">Todo list</h1>
-          <Todos todos={ this.state.todos } deleteTodo={ this.deleteTodo } />
-          <AddTodo addTodo={ this.addTodo } />
+            <h1 className="title is-1">Todo list</h1>
+            <Todos todos={ this.state.todos } deleteTodo={ this.deleteTodo } />
+            <AddTodo addTodo={ this.addTodo } /> */}
+            <Route exact path="/" component={ Home } />
+            <Route path="/about" component={ About } />
+            <Route path="/contact" component={ Contact } />
+          </div>
         </div>
-      </div>
+      </BrowserRouter>
     );
   }
 }
