@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Ninjas from './Ninjas';
 import AddNinja from './AddNinja';
 import Todos from './Todos';
+import AddTodo from './AddTodo';
 
 class App extends Component {
 
@@ -43,6 +44,21 @@ class App extends Component {
     console.log(prevProps, prevState);
   }
 
+  addTodo = (todo) => {
+    todo.id = Math.random();
+    let todos = [...this.state.todos, todo];
+    this.setState({
+      todos: todos
+    })
+  }
+
+  deleteTodo = (id) => {
+    let todos = this.state.todos.filter(todo => todo.id !== id);
+    this.setState({
+      todos: todos
+    })
+  }
+
   render() {
     return (
       <div className="content">
@@ -54,7 +70,8 @@ class App extends Component {
         <hr/>
 
         <h1 className="title is-1">Todo list</h1>
-        <Todos todos={ this.state.todos } />
+        <Todos todos={ this.state.todos } deleteTodo={ this.deleteTodo } />
+        <AddTodo addTodo={ this.addTodo } />
       </div>
     );
   }
