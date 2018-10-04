@@ -3,12 +3,18 @@ import { connect } from 'react-redux';
 
 class Post extends Component {
 
+    handleClick = () => {
+        this.props.deletePost(this.props.post.id);
+        this.props.history.push('/');               // redirect to homepage
+    }
+
     render() {
 
         const post = this.props.post ? (
             <div className="post">
                 <h1 className="has-text-centered">{ this.props.post.title }</h1>
                 <p>{ this.props.post.body }</p>
+                <button className="button is-danger" onClick={ this.handleClick }>Delete</button>
             </div>
         ) : (
             <p className="has-text-centered">Post does not exist.</p>
@@ -34,4 +40,12 @@ const mapStateToProps = (state, ownProps) => {
 
 }
 
-export default connect(mapStateToProps)(Post);
+const mapDispatchToProps = (dispatch) => {
+
+    return {
+        deletePost: (id) => { dispatch({ type: 'DELETE_POST', id: id }) }
+    }
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Post);

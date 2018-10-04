@@ -7,7 +7,7 @@ class Home extends Component {
 
     render() {
 
-        console.log(this.props);
+        // console.log(this.props);
 
         const { posts } = this.props;
         const listOfPosts = posts.length ? (
