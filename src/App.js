@@ -6,6 +6,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import NinjasPage from './components/ninja/NinjasPage';
 import TodosPage from './components/todo/TodosPage';
+import Post from './components/Post';
 
 class App extends Component {
 
@@ -29,6 +30,7 @@ class App extends Component {
             <Route path="/contact" component={ Contact } />
             <Route path="/ninjas" component={ NinjasPage } />
             <Route path="/todos" component={ TodosPage } />
+            <Route path="/:post_id" component={ Post } />
           </div>
         </div>
       </BrowserRouter>

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link, NavLink, withRouter } from 'react-router-dom';
-
+import { Link, withRouter } from 'react-router-dom';
 // NavLink can be used to add 'active' class to element when on that route
+
 const Navbar = (props) => {
     // console.log(props);
     return (
