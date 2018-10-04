@@ -3,7 +3,7 @@ import { Link, NavLink, withRouter } from 'react-router-dom';
 
 // NavLink can be used to add 'active' class to element when on that route
 const Navbar = (props) => {
-    console.log(props);
+    // console.log(props);
     return (
         <nav className="navbar is-transparent">
             <div className="navbar-menu">
