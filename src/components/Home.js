@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Info from '../info.png';
 
 class Home extends Component {
 
@@ -26,6 +27,7 @@ class Home extends Component {
                     <article className="message-is-dark" key={ post.id }>
                         <div className="message-header">
                             <Link to={ '/' + post.id }><p>{ post.title }</p></Link>
+                            <img className="image is-16x16" src={ Info } alt="info icon"/>
                         </div>
                         <div className="message-body">
                             { post.body }
